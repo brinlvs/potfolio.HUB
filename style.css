@@ -246,16 +246,13 @@ body {
     box-shadow: var(--shadow-hover);
 }
 
-.placeholder-image {
+    .profile-photo {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    background: var(--white);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 8rem;
-    color: var(--primary-pink);
+    object-fit: cover;
+    border: 5px solid white;
+}
 }
 
 .scroll-indicator {
