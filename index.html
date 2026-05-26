@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="style.css">
     
     <style>
-        /* Reset e Variáveis */
         :root {
             --primary-pink: #FF6B9D;
             --secondary-pink: #FF8FAB;
@@ -26,15 +25,8 @@
             --shadow-hover: 0 10px 30px rgba(255, 107, 157, 0.25);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: 'Poppins', sans-serif;
@@ -43,17 +35,15 @@
             overflow-x: hidden;
         }
 
-        /* Utilitários */
         .pink { color: var(--primary-pink); }
         .pink-text { color: var(--primary-pink); }
-        
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
-        /* Navegação */
         .navbar {
             position: fixed;
             top: 0;
@@ -103,13 +93,8 @@
             transition: width 0.3s ease;
         }
 
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary-pink);
-        }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-links a:hover { color: var(--primary-pink); }
 
         .burger {
             display: none;
@@ -125,7 +110,6 @@
             transition: all 0.3s ease;
         }
 
-        /* Hero Section */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -214,15 +198,9 @@
             transform: translateY(-3px);
         }
 
-        .btn-full {
-            width: 100%;
-            justify-content: center;
-        }
+        .btn-full { width: 100%; justify-content: center; }
 
-        .social-links {
-            display: flex;
-            gap: 1rem;
-        }
+        .social-links { display: flex; gap: 1rem; }
 
         .social-links a {
             width: 45px;
@@ -244,10 +222,7 @@
             transform: translateY(-3px);
         }
 
-        .hero-image {
-            display: flex;
-            justify-content: center;
-        }
+        .hero-image { display: flex; justify-content: center; }
 
         .image-container {
             width: 350px;
@@ -256,6 +231,15 @@
             background: linear-gradient(135deg, var(--primary-pink), var(--secondary-pink));
             padding: 10px;
             box-shadow: var(--shadow-hover);
+            overflow: hidden;
+        }
+
+        /* CORRIGIDO: foto real respeita o formato circular */
+        .profile-photo {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
         }
 
         .placeholder-image {
@@ -289,7 +273,6 @@
             60% { transform: translateX(-50%) translateY(-5px); }
         }
 
-        /* Seções Gerais */
         section { padding: 5rem 0; }
 
         .section-title {
@@ -311,7 +294,6 @@
             border-radius: 2px;
         }
 
-        /* Sobre */
         .about { background: var(--white); }
 
         .about-text p {
@@ -337,10 +319,7 @@
             border-left: 4px solid var(--primary-pink);
         }
 
-        .info-item i {
-            font-size: 2rem;
-            color: var(--primary-pink);
-        }
+        .info-item i { font-size: 2rem; color: var(--primary-pink); }
 
         .info-item h4 {
             font-size: 0.9rem;
@@ -354,7 +333,6 @@
             margin: 0;
         }
 
-        /* Timeline */
         .timeline {
             position: relative;
             max-width: 800px;
@@ -426,7 +404,6 @@
 
         .timeline-content p { color: var(--text-light); }
 
-        /* Projetos */
         .projects { background: var(--off-white); }
 
         .projects-grid {
@@ -477,9 +454,7 @@
             transition: transform 0.3s ease;
         }
 
-        .project-card:hover .project-image img {
-            transform: scale(1.05);
-        }
+        .project-card:hover .project-image img { transform: scale(1.05); }
 
         .placeholder-project {
             width: 100%;
@@ -542,12 +517,8 @@
 
         .btn-link:hover { color: var(--dark-pink); }
 
-        .coming-soon {
-            color: var(--dark-gray);
-            font-style: italic;
-        }
+        .coming-soon { color: var(--dark-gray); font-style: italic; }
 
-        /* Habilidades */
         .skills-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -621,12 +592,8 @@
             color: var(--text-dark);
         }
 
-        .skill-card p {
-            font-size: 0.9rem;
-            color: var(--text-light);
-        }
+        .skill-card p { font-size: 0.9rem; color: var(--text-light); }
 
-        /* Experiência */
         .experience { background: var(--off-white); }
 
         .experience-grid {
@@ -659,10 +626,7 @@
             margin-bottom: 1.5rem;
         }
 
-        .exp-icon i {
-            font-size: 2rem;
-            color: var(--white);
-        }
+        .exp-icon i { font-size: 2rem; color: var(--white); }
 
         .exp-content h3 {
             font-size: 1.3rem;
@@ -670,24 +634,10 @@
             color: var(--text-dark);
         }
 
-        .exp-company {
-            color: var(--primary-pink);
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
+        .exp-company { color: var(--primary-pink); font-weight: 600; margin-bottom: 0.5rem; }
+        .exp-period { color: var(--dark-gray); font-size: 0.9rem; margin-bottom: 1rem; }
+        .exp-description { color: var(--text-light); line-height: 1.7; }
 
-        .exp-period {
-            color: var(--dark-gray);
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-
-        .exp-description {
-            color: var(--text-light);
-            line-height: 1.7;
-        }
-
-        /* Contato */
         .contact-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -700,11 +650,7 @@
             color: var(--text-dark);
         }
 
-        .contact-info > p {
-            color: var(--text-light);
-            margin-bottom: 2rem;
-        }
-
+        .contact-info > p { color: var(--text-light); margin-bottom: 2rem; }
         .contact-details { margin-bottom: 2rem; }
 
         .contact-item {
@@ -720,22 +666,10 @@
             margin-top: 0.3rem;
         }
 
-        .contact-item h4 {
-            font-size: 0.95rem;
-            margin-bottom: 0.2rem;
-            color: var(--text-dark);
-        }
+        .contact-item h4 { font-size: 0.95rem; margin-bottom: 0.2rem; color: var(--text-dark); }
+        .contact-item p { color: var(--text-light); font-size: 0.9rem; }
 
-        .contact-item p {
-            color: var(--text-light);
-            font-size: 0.9rem;
-        }
-
-        .social-links-large {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
+        .social-links-large { display: flex; gap: 1rem; flex-wrap: wrap; }
 
         .social-link {
             display: flex;
@@ -750,10 +684,7 @@
             transition: all 0.3s ease;
         }
 
-        .social-link i {
-            font-size: 1.3rem;
-            color: var(--primary-pink);
-        }
+        .social-link i { font-size: 1.3rem; color: var(--primary-pink); }
 
         .social-link:hover {
             background: var(--primary-pink);
@@ -792,7 +723,6 @@
 
         .form-group textarea { resize: vertical; }
 
-        /* Footer */
         .footer {
             background: var(--text-dark);
             color: var(--white);
@@ -801,15 +731,9 @@
         }
 
         .footer p { margin-bottom: 0.5rem; }
-
-        .footer-text {
-            font-size: 0.9rem;
-            color: var(--dark-gray);
-        }
-
+        .footer-text { font-size: 0.9rem; color: var(--dark-gray); }
         .footer-text i { color: var(--primary-pink); }
 
-        /* Responsivo */
         @media screen and (max-width: 968px) {
             .nav-links {
                 position: absolute;
@@ -828,35 +752,18 @@
             }
 
             .nav-links.nav-active { transform: translateX(0%); }
-
             .burger { display: flex; }
 
-            .hero-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
+            .hero-content { grid-template-columns: 1fr; text-align: center; }
             .hero-text h1 { font-size: 2.2rem; }
-
             .hero-buttons { justify-content: center; }
-
             .social-links { justify-content: center; }
-
             .hero-image { order: -1; }
-
-            .image-container {
-                width: 250px;
-                height: 250px;
-            }
-
+            .image-container { width: 250px; height: 250px; }
             .personal-info { grid-template-columns: 1fr; }
-
             .skills-container { grid-template-columns: 1fr; }
-
             .skills-grid { grid-template-columns: 1fr; }
-
             .contact-content { grid-template-columns: 1fr; }
-
             .project-card.featured { grid-column: auto; }
         }
 
@@ -865,32 +772,23 @@
             .hero-text h2 { font-size: 1rem; }
             .section-title { font-size: 2rem; }
             .hero-buttons { flex-direction: column; }
-            .btn {
-                width: 100%;
-                justify-content: center;
-            }
+            .btn { width: 100%; justify-content: center; }
             .timeline::before { left: 15px; }
             .timeline-item { padding-left: 45px; }
             .timeline-dot { left: 5px; }
             .projects-grid { grid-template-columns: 1fr; }
         }
 
-        /* Animações */
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .fade-in { animation: fadeInUp 0.8s ease; }
     </style>
 </head>
 <body>
+
     <!-- Navegação -->
     <nav class="navbar">
         <div class="container">
@@ -913,7 +811,7 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
@@ -936,378 +834,4 @@
                     </div>
                     <div class="social-links">
                         <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="mailto:sabrinaalves12398@gmail.com"><i class="fas fa-envelope"></i></a>
-                    </div>
-                </div>
-                <div class="hero-image">
-                    <div class="image-container">
-                       <img src="foto-perfil.jpg" alt="Sabrina Alves da Silva" class="profile-photo">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <i class="fas fa-chevron-down"></i>
-        </div>
-    </section>
-
-    <!-- Sobre -->
-    <section id="sobre" class="about">
-        <div class="container">
-            <h2 class="section-title">Sobre <span class="pink">Mim</span></h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>
-                        Sou formada em <strong>Técnico em Alimentos</strong> pelo Instituto Federal de Brasília (IFB) 
-                        e atualmente curso duas graduações simultâneas: <strong>Engenharia de Software</strong> no 
-                        Centro Universitário de Brasília (CEUB) e <strong>Ciências Contábeis</strong> na Universidade 
-                        de Brasília (UnB).
-                    </p>
-                    <p>
-                        Tenho conhecimentos iniciais em programação (Python e JavaScript), uso de ferramentas como 
-                        GitHub e noções de sistemas computacionais, aliados a fundamentos da área contábil, como 
-                        organização financeira, análise básica de dados e entendimento de conceitos como balanço patrimonial.
-                    </p>
-                    <p>
-                        Me destaco pela <strong>facilidade em aprender</strong>, <strong>organização</strong> e 
-                        <strong>comprometimento com resultados</strong>. Sou comunicativa, gosto de desafios e sou 
-                        dedicada a tudo que faço.
-                    </p>
-                    <div class="personal-info">
-                        <div class="info-item">
-                            <i class="fas fa-graduation-cap"></i>
-                            <div>
-                                <h4>Formação</h4>
-                                <p>Técnico em Alimentos - IFB</p>
-                            </div>
-                        </div>
-                        <div class="info-item">
-                            <i class="fas fa-code"></i>
-                            <div>
-                                <h4>Área de Atuação</h4>
-                                <p>Tecnologia & Contabilidade</p>
-                            </div>
-                        </div>
-                        <div class="info-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <h4>Localização</h4>
-                                <p>Brasília - DF</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Formação -->
-    <section id="formacao" class="education">
-        <div class="container">
-            <h2 class="section-title">Formação <span class="pink">Acadêmica</span></h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-date">2026 - 2029</span>
-                        <h3>Bacharelado em Engenharia de Software</h3>
-                        <p class="institution">Centro Universitário de Brasília (CEUB)</p>
-                        <p>Formação em desenvolvimento de software, algoritmos, estruturas de dados e tecnologias emergentes.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-date">2026 - 2029</span>
-                        <h3>Bacharelado em Ciências Contábeis</h3>
-                        <p class="institution">Universidade de Brasília (UnB)</p>
-                        <p>Estudo de contabilidade financeira, gerencial, auditoria, legislação tributária e análise de demonstrações contábeis.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-date">2023 - 2025</span>
-                        <h3>Técnico em Alimentos e Ensino Médio</h3>
-                        <p class="institution">Instituto Federal de Brasília (IFB)</p>
-                        <p>Formação técnica em alimentos com base científica e tecnológica, integrada ao ensino médio.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projetos -->
-    <section id="projetos" class="projects">
-        <div class="container">
-            <h2 class="section-title">Projetos & <span class="pink">Pesquisas</span></h2>
-            <div class="projects-grid">
-                <!-- Projeto de Pesquisa Científica -->
-                    <!-- Projetos -->
-    <section id="projetos" class="projects">
-        <div class="container">
-            <h2 class="section-title">Projetos & <span class="pink">Pesquisas</span></h2>
-            <div class="projects-grid">
-                <!-- Projeto de Pesquisa Científica -->
-                <div class="project-card featured">
-                    <div class="project-badge">Destaque</div>
-                    <div class="project-image">
-                        <img src= "banner.png" alt="Pesquisa Científica - Culto ao Corpo Saudável">
-                    </div>
-                    <div class="project-content">
-                        <h3>O Culto ao Corpo Saudável: A Saúde como Novo Símbolo de Status</h3>
-                        <p class="project-category">Pesquisa Científica | 14ª Semana de Produção Científica</p>
-                        <p class="project-description">
-                            Pesquisa exploratória-descritiva sobre como a saúde deixou de ser apenas bem-estar 
-                            físico e mental para se tornar símbolo de status social. Estudo sobre influência 
-                            das redes sociais, pressão social e uso de tecnologias de monitoramento.
-                        </p>
-                        <div class="project-tags">
-                            <span class="tag">Pesquisa</span>
-                            <span class="tag">Saúde</span>
-                            <span class="tag">Redes Sociais</span>
-                            <span class="tag">Status Social</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="banner.png" target="_blank" class="btn-link">
-                                <i class="fas fa-eye"></i> Ver Banner Completo
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Outros Projetos -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="placeholder-project">
-                            <i class="fas fa-laptop-code"></i>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Em Desenvolvimento</h3>
-                        <p class="project-category">Projeto Acadêmico</p>
-                        <p class="project-description">
-                            Novos projetos serão adicionados conforme o avanço da formação acadêmica 
-                            e experiências profissionais.
-                        </p>
-                        <div class="project-links">
-                            <span class="coming-soon">Em breve</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Habilidades -->
-    <!-- Habilidades -->
-    <section id="habilidades" class="skills">
-        <div class="container">
-            <h2 class="section-title">Habilidades & <span class="pink">Competências</span></h2>
-            <div class="skills-container">
-                <div class="skills-category">
-                    <h3><i class="fas fa-code"></i> Técnicas</h3>
-                    <div class="skills-list">
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span>Python</span>
-                                <span>Básico</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 40%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span>JavaScript</span>
-                                <span>Básico</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 35%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span>GitHub</span>
-                                <span>Controle de Versão</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 50%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span>Pacote Office</span>
-                                <span>Word, Excel, etc.</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 75%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span>Noções de Contabilidade</span>
-                                <span>Balanço Patrimonial</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 45%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skills-category">
-                    <h3><i class="fas fa-users"></i> Comportamentais</h3>
-                    <div class="skills-grid">
-                        <div class="skill-card">
-                            <i class="fas fa-comments"></i>
-                            <h4>Comunicação</h4>
-                            <p>Facilidade em me comunicar e trabalhar em equipe</p>
-                        </div>
-                        <div class="skill-card">
-                            <i class="fas fa-brain"></i>
-                            <h4>Aprendizado Rápido</h4>
-                            <p>Facilidade em aprender novas tecnologias e conceitos</p>
-                        </div>
-                        <div class="skill-card">
-                            <i class="fas fa-tasks"></i>
-                            <h4>Organização</h4>
-                            <p>Planejamento e organização de tarefas e processos</p>
-                        </div>
-                        <div class="skill-card">
-                            <i class="fas fa-bullseye"></i>
-                            <h4>Dedicação</h4>
-                            <p>Comprometimento com resultados e qualidade</p>
-                        </div>
-                        <div class="skill-card">
-                            <i class="fas fa-lightbulb"></i>
-                            <h4>Proatividade</h4>
-                            <p>Iniciativa e busca por soluções</p>
-                        </div>
-                        <div class="skill-card">
-                            <i class="fas fa-sync-alt"></i>
-                            <h4>Adaptabilidade</h4>
-                            <p>Flexibilidade para diferentes situações</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experiência -->
-    <section class="experience">
-        <div class="container">
-            <h2 class="section-title">Experiência <span class="pink">Profissional</span></h2>
-            <div class="experience-grid">
-                <div class="experience-card">
-                    <div class="exp-icon">
-                        <i class="fas fa-coffee"></i>
-                    </div>
-                    <div class="exp-content">
-                        <h3>Técnica de Alimentos</h3>
-                        <p class="exp-company">Arqui Café</p>
-                        <p class="exp-period">3 meses</p>
-                        <p class="exp-description">
-                            Desenvolvimento de habilidades em organização, atendimento ao cliente e 
-                            trabalho em equipe, garantindo qualidade e eficiência no serviço prestado.
-                        </p>
-                    </div>
-                </div>
-                <div class="experience-card">
-                    <div class="exp-icon">
-                        <i class="fas fa-building"></i>
-                    </div>
-                    <div class="exp-content">
-                        <h3>Assistente Administrativa</h3>
-                        <p class="exp-company">Mi.Móveis (Empresa Familiar)</p>
-                        <p class="exp-period">6 anos</p>
-                        <p class="exp-description">
-                            Auxílio nas rotinas administrativas, organização de processos, atendimento 
-                            e apoio na gestão do negócio, proporcionando experiência prática em 
-                            responsabilidade e organização profissional.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contato -->
-    <section id="contato" class="contact">
-        <div class="container">
-            <h2 class="section-title">Entre em <span class="pink">Contato</span></h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Vamos Conversar!</h3>
-                    <p>Estou sempre aberta a novas oportunidades, parcerias e conversas interessantes. 
-                       Entre em contato comigo!</p>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <div>
-                                <h4>E-mail</h4>
-                                <p>sabrinaalves12398@gmail.com</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <h4>Localização</h4>
-                                <p>SQN 412, Brasília - DF</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <div>
-                                <h4>Telefone</h4>
-                                <p>(61) 99572-4819</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="social-links-large">
-                        <a href="#" target="_blank" class="social-link">
-                            <i class="fab fa-linkedin-in"></i>
-                            <span>LinkedIn</span>
-                        </a>
-                        <a href="#" target="_blank" class="social-link">
-                            <i class="fab fa-github"></i>
-                            <span>GitHub</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <input type="text" placeholder="Seu Nome" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" placeholder="Seu E-mail" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" placeholder="Assunto">
-                        </div>
-                        <div class="form-group">
-                            <textarea rows="5" placeholder="Sua Mensagem" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-full">
-                            <i class="fas fa-paper-plane"></i> Enviar Mensagem
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Sabrina Alves da Silva. Todos os direitos reservados.</p>
-            <p class="footer-text">Desenvolvido com <i class="fas fa-heart pink"></i> para o GitHub</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
+                        <a href="#" target="_blank"><i class="fab fa-g
